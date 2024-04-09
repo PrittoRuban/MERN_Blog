@@ -2,8 +2,8 @@
   "name": "mern-blog-using-tailwind-css",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon api/index.js",
     "start": "node api/index.js"
@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongoose": "^8.3.1",
     "nodemon": "^3.1.0"
   }
 }
