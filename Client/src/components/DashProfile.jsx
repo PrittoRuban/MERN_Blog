@@ -14,15 +14,25 @@ export default function DashProfile() {
             className="rounded-full w-full h-full object-cover border-8 border-[lightgrey]"
           />
         </div>
-        <TextInput type="text" id="username" placeholder="username" defaultValue={currentUser.username}/>
-        <TextInput type="email" id="email" placeholder="email" defaultValue={currentUser.email}/>
+        <TextInput
+          type="text"
+          id="username"
+          placeholder="username"
+          defaultValue={currentUser.username}
+        />
+        <TextInput
+          type="email"
+          id="email"
+          placeholder="email"
+          defaultValue={currentUser.email}
+        />
         <TextInput type="password" id="password" placeholder="password" />
-        <Button type="submit" gradientDuoTone='purpleToBlue' outline>
-            Update
+        <Button type="submit" gradientDuoTone="purpleToBlue" outline>
+          Update
         </Button>
         <div className="text-red-500 flex justify-between mt-5">
-            <span className="cursor-pointer">Delete Account</span>
-            <span className="cursor-pointer">Sign Out</span>
+          <span className="cursor-pointer">Delete Account</span>
+          <span className="cursor-pointer">Sign Out</span>
         </div>
       </form>
     </div>
