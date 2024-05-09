@@ -1,6 +1,6 @@
 import { Footer } from "flowbite-react";
 import { Link } from "react-router-dom";
-import { BsFacebook, BsGithub, BsInstagram, BsLinkedin, BsMedium, BsPinterest, BsReddit, BsStackOverflow, BsTwitterX} from "react-icons/bs";
+import { BsFacebook, BsGithub, BsInstagram, BsLinkedin, BsMedium, BsPinterest, BsQuora, BsReddit, BsStackOverflow, BsTwitterX} from "react-icons/bs";
 
 export default function FooterComponent() {
   return (
@@ -90,6 +90,7 @@ export default function FooterComponent() {
             <Footer.Icon href="https://pin.it/5OsHuu85T" target="_blank" icon={BsPinterest} />
             <Footer.Icon href="https://medium.com/@prittoruban" target="_blank" icon={BsMedium} />
             <Footer.Icon href="https://stackoverflow.com/users/22302751/pritto-ruban" target="_blank" icon={BsStackOverflow} />
+            <Footer.Icon href="https://www.quora.com/profile/Pritto-Ruban-1" target="_blank" icon={BsQuora} />
           </div>
         </div>
       </div>
