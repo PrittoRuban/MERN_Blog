@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "supervisor api/index.js",
+    "dev": "nodemon api/index.js",
     "start": "node api/index.js"
   },
   "keywords": [],
@@ -18,6 +18,6 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.1",
-    "supervisor": "^0.12.0"
+    "nodemon": "^3.1.3"
   }
 }
