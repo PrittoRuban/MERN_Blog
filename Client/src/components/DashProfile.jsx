@@ -109,8 +109,8 @@ export default function DashProfile() {
       });
       const data = await res.json();
       if (!res.ok) {
-        dispatch(updateFailure("Update failed, please try again."));
-        setUpdateUserError("Duplicate email or username, please try again.");
+        dispatch(updateFailure("Tried different username or email? Still not working? Try relogin and try again."));
+        setUpdateUserError("Username or Email already exists, please try again");
       } else {
         dispatch(updateSuccess(data));
         setUpdateUserSuccess("User updated successfully");
