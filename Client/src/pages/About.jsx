@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import { Hero, Skills } from "../components/AboutHero";
 
 export default function About() {
   return (
-    <div>About</div>
-  )
+    <div>
+      <Hero />
+      <Skills />
+    </div>
+  );
 }
