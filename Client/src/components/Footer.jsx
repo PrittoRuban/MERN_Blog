@@ -37,11 +37,11 @@ export default function FooterComponent() {
                   My Projects
                 </Footer.Link>
                 <Footer.Link
-                  href="https://www.reddit.com/user/prittoruban/?rdt=32844"
+                  href="https://twitter.com/prittoruban"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Reddit
+                  X (Twitter)
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
@@ -49,18 +49,18 @@ export default function FooterComponent() {
               <Footer.Title title="Get Connected" />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href="https://github.com/PrittoRuban"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </Footer.Link>
-                <Footer.Link
                   href="https://linkedin.com/in/prittoruban"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   LinkedIn
+                </Footer.Link>
+                <Footer.Link
+                  href="https://www.instagram.com/prittorubanofficial/?igsh=ODhxZjQ5YW5nbG9h"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
