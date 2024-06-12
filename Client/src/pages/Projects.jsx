@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { ProjectGrids } from "../components/ProjectGrids";
 
 export default function Projects() {
   return (
-    <div>Projects</div>
-  )
+    <div>
+      <ProjectGrids />
+    </div>
+  );
 }

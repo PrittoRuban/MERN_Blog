@@ -20,6 +20,7 @@ import {
   SiVisualstudiocode,
   SiIntellijidea,
   SiLinux,
+  SiRedox,
 } from "react-icons/si";
 
 export const Hero = () => {
@@ -82,6 +83,10 @@ export const Skills = () => {
       icon: <SiExpress className="text-gray-700 dark:text-gray-50" />,
     },
     { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+    {
+      name: "Redox",
+      icon: <SiRedox className="text-purple-600 dark:text-purple-200" />,
+    },
     {
       name: "PostgreSQL",
       icon: <SiPostgresql className="text-blue-700 dark:text-blue-400" />,
