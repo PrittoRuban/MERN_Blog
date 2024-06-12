@@ -8,6 +8,7 @@ import {
   FaJsSquare,
   FaGithub,
   FaJava,
+  FaPython,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -16,11 +17,16 @@ import {
   SiGit,
   SiMysql,
   SiCplusplus,
-  SiPython,
   SiVisualstudiocode,
   SiIntellijidea,
   SiLinux,
   SiRedox,
+  SiTailwindcss,
+  SiBootstrap,
+  SiPostman,
+  SiInsomnia,
+  SiReplit,
+  SiEjs,
 } from "react-icons/si";
 
 export const Hero = () => {
@@ -98,6 +104,9 @@ export const Skills = () => {
     { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
     { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
     { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
+    { name: "EJS", icon: <SiEjs className="text-red-500" /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-blue-500" />},
+    { name: "Bootstrap", icon: <SiBootstrap className="text-purple-500" />},
     { name: "Git", icon: <SiGit className="text-red-500" /> },
     {
       name: "GitHub",
@@ -107,12 +116,15 @@ export const Skills = () => {
   const programmingLanguages = [
     { name: "C++", icon: <SiCplusplus className="text-blue-500" /> },
     { name: "Java (Primary)", icon: <FaJava className="text-yellow-500" /> },
-    { name: "Python", icon: <SiPython /> },
+    { name: "Python", icon: <FaPython className="text-blue-400"/> },
     {
       name: "JavaScript",
       icon: <FaJsSquare className="text-yellow-400" />,
     },
+    { name: "Postman", icon: <SiPostman className="text-orange-500" />},
+    { name: "Insomnia", icon: <SiInsomnia className="text-violet-500" />},
     { name: "VSCode", icon: <SiVisualstudiocode className="text-blue-500" /> },
+    { name: "Replit", icon: <SiReplit className="text-orange-500" />},
     {
       name: "IntelliJ IDEA",
       icon: <SiIntellijidea />,
