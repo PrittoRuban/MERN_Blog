@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^2.2.3",
     "firebase": "^10.11.0",
     "flowbite-react": "^0.8.0",

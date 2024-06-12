@@ -34,7 +34,7 @@ export const Hero = () => {
     <section className="bg-gray-100 dark:bg-gray-800 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="text-base font-bold tracking-wide text-green-500 dark:text-indigo-400 ">
+          <p className="text-base font-bold tracking-wide text-green-500 dark:text-indigo-400 mb-5">
             Want to know more about me? You've come to the right place
           </p>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
@@ -54,7 +54,7 @@ export const Hero = () => {
                 alt="Pritto Ruban"
               />
             </div>
-            <div className="md:w-2/3 mt-6 md:mt-0 md:ml-6">
+            <div className="md:w-2/3 mt-4 md:mt-0 md:ml-6">
               <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
                 ⚡Currently, as a student at R.M.K College of Engineering and
                 Technology, I am a passionate enthusiast of computer science
@@ -105,8 +105,8 @@ export const Skills = () => {
     { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
     { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
     { name: "EJS", icon: <SiEjs className="text-red-500" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-blue-500" />},
-    { name: "Bootstrap", icon: <SiBootstrap className="text-purple-500" />},
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-blue-500" /> },
+    { name: "Bootstrap", icon: <SiBootstrap className="text-purple-500" /> },
     { name: "Git", icon: <SiGit className="text-red-500" /> },
     {
       name: "GitHub",
@@ -116,15 +116,15 @@ export const Skills = () => {
   const programmingLanguages = [
     { name: "C++", icon: <SiCplusplus className="text-blue-500" /> },
     { name: "Java (Primary)", icon: <FaJava className="text-yellow-500" /> },
-    { name: "Python", icon: <FaPython className="text-blue-400"/> },
+    { name: "Python", icon: <FaPython className="text-blue-400" /> },
     {
       name: "JavaScript",
       icon: <FaJsSquare className="text-yellow-400" />,
     },
-    { name: "Postman", icon: <SiPostman className="text-orange-500" />},
-    { name: "Insomnia", icon: <SiInsomnia className="text-violet-500" />},
+    { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+    { name: "Insomnia", icon: <SiInsomnia className="text-violet-500" /> },
     { name: "VSCode", icon: <SiVisualstudiocode className="text-blue-500" /> },
-    { name: "Replit", icon: <SiReplit className="text-orange-500" />},
+    { name: "Replit", icon: <SiReplit className="text-orange-500" /> },
     {
       name: "IntelliJ IDEA",
       icon: <SiIntellijidea />,

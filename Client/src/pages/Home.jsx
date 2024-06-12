@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import WelcomeMessage from "../components/WelcomeMessage";
 
 export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <WelcomeMessage />
+    </div>
+  );
 }
