@@ -20,13 +20,13 @@ import {
   SiVisualstudiocode,
   SiIntellijidea,
   SiLinux,
-  SiRedox,
   SiTailwindcss,
   SiBootstrap,
   SiPostman,
   SiInsomnia,
   SiReplit,
   SiEjs,
+  SiRedux,
 } from "react-icons/si";
 
 export const Hero = () => {
@@ -90,8 +90,8 @@ export const Skills = () => {
     },
     { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
     {
-      name: "Redox",
-      icon: <SiRedox className="text-purple-600 dark:text-purple-200" />,
+      name: "Redux",
+      icon: <SiRedux className="text-purple-600 dark:text-purple-200" />,
     },
     {
       name: "PostgreSQL",

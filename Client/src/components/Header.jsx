@@ -11,7 +11,7 @@ export default function App() {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const { theme } = useSelector((state) => state.theme);
-  const handleSignout = async () => { 
+  const handleSignout = async () => {
     try {
       const res = await fetch("/api/user/signout", {
         method: "POST",
@@ -27,7 +27,7 @@ export default function App() {
     }
   };
   return (
-    <Navbar className="border-b-2">
+    <Navbar className="border-b-2 sm:flex-col gap-2">
       <Link
         to="/"
         className="self-center whitespace-nowrap text-sm
@@ -51,13 +51,17 @@ export default function App() {
         />
       </form>
 
-      <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+      <Button
+        className="w-12 h-10 lg:hidden sm:inline flex-col gap-3"
+        color="gray"
+        pill
+      >
         <AiOutlineSearch />
       </Button>
 
       <div className="flex gap-2 md:order-2">
         <Button
-          className="w-12 h-10 hidden sm:inline"
+          className="w-12 h-10 sm:inline flex-col gap-3"
           color="gray"
           pill
           onClick={() => dispatch(toggleTheme())}
