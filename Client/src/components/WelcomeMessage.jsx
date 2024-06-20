@@ -16,7 +16,7 @@ const WelcomeMessage = () => {
         style={springProps}
         className="text-4xl md:text-6xl font-bold text-center my-4"
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-pink-500 to-violet-500 dark:from-violet-500 dark:via-pink-500 dark:to-red-500">
+        <span className="ml-1 mr-1 bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-pink-500 to-violet-500 dark:from-violet-500 dark:via-pink-500 dark:to-red-500">
           Welcome to My Blog!
         </span>
       </animated.h1>
@@ -26,7 +26,7 @@ const WelcomeMessage = () => {
       >
         Explore the latest posts and enjoy reading!
       </animated.p>
-      <animated.div>
+      <animated.div className='ml-4 mr-4 mb-6'>
         <CallToAction />
       </animated.div>
     </div>

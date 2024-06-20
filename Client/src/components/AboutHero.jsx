@@ -248,7 +248,7 @@ export const Skills = () => {
           ))}
         </motion.div>
       </div>
-      <motion.div className="mt-5">
+      <motion.div className="mt-8 md:mt-5 ml-2 mr-2">
         <CallToAction />
       </motion.div>
       <motion.h3
