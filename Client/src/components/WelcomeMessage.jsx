@@ -1,5 +1,6 @@
 import React from "react";
 import { useSpring, animated } from "@react-spring/web";
+import CallToAction from "./CallToAction";
 
 const WelcomeMessage = () => {
   const springProps = useSpring({
@@ -25,6 +26,9 @@ const WelcomeMessage = () => {
       >
         Explore the latest posts and enjoy reading!
       </animated.p>
+      <animated.div>
+        <CallToAction />
+      </animated.div>
     </div>
   );
 };
