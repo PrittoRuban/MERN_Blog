@@ -106,7 +106,7 @@ export default function CreatePost() {
             <option value="reactjs">React.js</option>
             <option value="nodejs">Node.js</option>
             <option value="expressjs">Express.js</option>
-            <option value="javas">Java</option>
+            <option value="java">Java</option>
             <option value="python">Python</option>
             <option value="c">C</option>
             <option value="c++">C++</option>
