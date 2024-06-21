@@ -191,9 +191,9 @@ export default function UpdatePost() {
           placeholder="Write something..."
           className="h-72 mb-12"
           required
-          onChange={(value) => {
-            setFormData({ ...formData, content: value });
-          }}
+          onChange={(value) =>
+            setFormData((prevFormData) => ({ ...prevFormData, content: value }))
+          }
         />
         <Button type="submit" gradientDuoTone="purpleToPink">
           Update post
