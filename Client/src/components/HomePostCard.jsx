@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { Transition } from "@headlessui/react";
 
-export default function PostCard({ post }) {
+export default function HomePostCard({ post }) {
   return (
-    <div className="group relative w-full border border-teal-500 hover:border-2 h-[400px] overflow-hidden rounded-lg sm:w-[430px] transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+    <div className="group relative w-full border border-teal-500 hover:border-2 h-[350px] overflow-hidden rounded-lg sm:w-[400px] transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
       <Link to={`/post/${post.slug}`}>
         <img
           src={post.image}
           alt="post cover"
-          className="h-[260px] w-full object-cover transition-all duration-300 ease-in-out transform group-hover:scale-105"
+          className="h-[220px] w-full object-cover transition-all duration-300 ease-in-out transform group-hover:scale-105"
         />
       </Link>
       <div className="p-3 flex flex-col gap-2">

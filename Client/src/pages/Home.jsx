@@ -32,10 +32,10 @@ export default function Home() {
           <>
             {posts && posts.length > 0 && (
               <div className="flex flex-col gap-4">
-                <h2 className="text-2xl font-semibold text-center mb-3">
+                <h2 className="text-2xl font-bold text-center mb-3">
                   Recent Posts
                 </h2>
-                <div className="flex flex-wrap gap-4 justify-center">
+                <div className="flex flex-wrap gap-6 justify-center">
                   {posts.map((post) => (
                     <HomePostCard key={post._id} post={post} />
                   ))}
