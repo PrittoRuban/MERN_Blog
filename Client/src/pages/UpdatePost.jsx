@@ -132,23 +132,12 @@ export default function UpdatePost() {
             }
             value={formData.category}
           >
-            <option value="uncategorized">Select a Category</option>
-            <option value="javascript">JavaScript</option>
-            <option value="reactjs">React.js</option>
-            <option value="nodejs">Node.js</option>
-            <option value="expressjs">Express.js</option>
-            <option value="javas">Java</option>
-            <option value="python">Python</option>
-            <option value="c">C</option>
-            <option value="c++">C++</option>
-            <option value="c#">C#</option>
-            <option value="ruby">Ruby</option>
-            <option value="php">PHP</option>
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="bootstrap">Bootstrap</option>
-            <option value="tailwind">Tailwind</option>
-            <option value="other">Other Programing</option>
+            <option value="Uncategorized">Select a Category</option>
+            <option value="Technology">Technology</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Education">Education</option>
+            <option value="Freelance">Freelance</option>
+            <option value="Other">Other</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
