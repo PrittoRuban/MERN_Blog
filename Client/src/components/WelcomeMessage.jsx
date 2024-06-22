@@ -1,7 +1,6 @@
 import React from "react";
 import { useSpring, animated } from "@react-spring/web";
 import CallToAction from "./CallToAction";
-import { FaRegSmile } from "react-icons/fa";
 
 const WelcomeMessage = () => {
   const springProps = useSpring({
@@ -18,7 +17,7 @@ const WelcomeMessage = () => {
         className="text-4xl md:text-6xl font-bold text-center my-4"
       >
         <span className="ml-1 mr-1 bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-pink-500 to-violet-500 dark:from-violet-500 dark:via-pink-500 dark:to-red-500">
-          Welcome to My Blog! <FaRegSmile className="inline-block" />
+          Welcome to My Blog! 
         </span>
       </animated.h1>
       <animated.p

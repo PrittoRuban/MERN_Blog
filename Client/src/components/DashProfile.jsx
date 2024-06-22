@@ -109,8 +109,14 @@ export default function DashProfile() {
       });
       const data = await res.json();
       if (!res.ok) {
-        dispatch(updateFailure("Tried different username or email? Still not working? Try relogin and try again."));
-        setUpdateUserError("Username or Email already exists, please try again");
+        dispatch(
+          updateFailure(
+            "Username must be between 3 and 20 characters, Password must be at least 6 characters, Tried different username or email? Still not working? Try relogin and try again."
+          )
+        );
+        setUpdateUserError(
+          "Username cannot contain spaces, Username must be lowercase, Username can only contain letters and numbers"
+        );
       } else {
         dispatch(updateSuccess(data));
         setUpdateUserSuccess("User updated successfully");
