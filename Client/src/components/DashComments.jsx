@@ -9,6 +9,7 @@ export default function DashComments() {
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [commentIdToDelete, setCommentIdToDelete] = useState("");
+  const [userNames, setUserNames] = useState({});
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -29,6 +30,21 @@ export default function DashComments() {
       fetchComments();
     }
   }, [currentUser._id]);
+
+  useEffect(() => {
+    const fetchUserNames = async () => {
+      const names = {};
+      for (const comment of comments) {
+        if (!names[comment.userId]) {
+          // Assuming `getUserName` returns a Promise that resolves to the user's name
+          names[comment.userId] = await getUserName(comment.userId);
+        }
+      }
+      setUserNames(names);
+    };
+
+    fetchUserNames();
+  }, [comments]); // Re-run when `comments` changes
 
   const handleShowMore = async () => {
     const startIndex = comments.length;
@@ -71,6 +87,18 @@ export default function DashComments() {
     }
   };
 
+  const getUserName = async (userId) => {
+    try {
+      const res = await fetch(`/api/user/${userId}`);
+      const data = await res.json();
+      if (res.ok) {
+        return data.username;
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
       {currentUser.isAdmin && comments.length > 0 ? (
@@ -81,7 +109,7 @@ export default function DashComments() {
               <Table.HeadCell>Comment content</Table.HeadCell>
               <Table.HeadCell>Number of likes</Table.HeadCell>
               <Table.HeadCell>PostId</Table.HeadCell>
-              <Table.HeadCell>UserId</Table.HeadCell>
+              <Table.HeadCell>User Name</Table.HeadCell>
               <Table.HeadCell>Delete</Table.HeadCell>
             </Table.Head>
             {comments.map((comment) => (
@@ -93,7 +121,9 @@ export default function DashComments() {
                   <Table.Cell>{comment.content}</Table.Cell>
                   <Table.Cell>{comment.numberOfLikes}</Table.Cell>
                   <Table.Cell>{comment.postId}</Table.Cell>
-                  <Table.Cell>{comment.userId}</Table.Cell>
+                  <Table.Cell>
+                    {userNames[comment.userId] || "Loading..."}
+                  </Table.Cell>
                   <Table.Cell>
                     <span
                       onClick={() => {
