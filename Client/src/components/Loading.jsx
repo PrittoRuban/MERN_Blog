@@ -1,5 +1,3 @@
-// components/Loading.js
-
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -14,6 +12,11 @@ const greetings = [
   { language: "Здравствуйте", color: "text-orange-500" }, // Russian
   { language: "Olá", color: "text-indigo-500" },
   { language: "Hallo", color: "text-gray-500" },
+  { language: "Namaste", color: "text-blue-500" }, // Hindi
+  { language: "مرحبا", color: "text-green-500" }, // Arabic
+  { language: "Merhaba", color: "text-yellow-500" }, // Turkish
+  { language: "Salam", color: "text-red-500" }, // Persian
+  { language: "Sawubona", color: "text-purple-500" }, // Zulu
 ];
 
 const Loading = ({ onLoaded }) => {

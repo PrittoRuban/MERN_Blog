@@ -8,7 +8,26 @@ import Loading from "../components/Loading";
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
+
+  // Check if user has visited within the last hour
+  const hasVisited = localStorage.getItem("hasVisited");
+  const visitTimestamp = localStorage.getItem("visitTimestamp");
+  const oneHourInMilliseconds = 60 * 60 * 1000;
+
+  const [isLoading, setIsLoading] = useState(() => {
+    if (!hasVisited) {
+      return true;
+    }
+    if (visitTimestamp) {
+      const timeSinceLastVisit = Date.now() - parseInt(visitTimestamp, 10);
+      if (timeSinceLastVisit > oneHourInMilliseconds) {
+        localStorage.removeItem("hasVisited");
+        localStorage.removeItem("visitTimestamp");
+        return true;
+      }
+    }
+    return false;
+  });
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -22,15 +41,19 @@ export default function Home() {
 
   const handleLoaded = () => {
     setIsLoading(false);
+    localStorage.setItem("hasVisited", "true");
+    localStorage.setItem("visitTimestamp", Date.now().toString());
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      handleLoaded();
-    }, 3000); 
+    if (isLoading) {
+      const timer = setTimeout(() => {
+        handleLoaded();
+      }, 300 * 15);
 
-    return () => clearTimeout(timer);
-  }, []);
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
 
   return (
     <>
