@@ -10,6 +10,7 @@ export default function DashComments() {
   const [showModal, setShowModal] = useState(false);
   const [commentIdToDelete, setCommentIdToDelete] = useState("");
   const [userNames, setUserNames] = useState({});
+  const [commentTitle, setCommentTitle] = useState({});
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -36,7 +37,6 @@ export default function DashComments() {
       const names = {};
       for (const comment of comments) {
         if (!names[comment.userId]) {
-          // Assuming `getUserName` returns a Promise that resolves to the user's name
           names[comment.userId] = await getUserName(comment.userId);
         }
       }
@@ -44,7 +44,21 @@ export default function DashComments() {
     };
 
     fetchUserNames();
-  }, [comments]); // Re-run when `comments` changes
+  }, [comments]);
+
+  useEffect(() => {
+    const fetchPostTitles = async () => {
+      const titles = {};
+      for (const comment of comments) {
+        if (!titles[comment.postId]) {
+          titles[comment.postId] = await getPostTitle(comment.postId);
+        }
+      }
+      setCommentTitle(titles);
+    };
+
+    fetchPostTitles();
+  }, [comments]);
 
   const handleShowMore = async () => {
     const startIndex = comments.length;
@@ -99,6 +113,18 @@ export default function DashComments() {
     }
   };
 
+  const getPostTitle = async (postId) => {
+    try {
+      const res = await fetch(`/api/post/getposts/?postId=${postId}`);
+      const data = await res.json();
+      if (res.ok) {
+        return data.posts[0].title;
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
       {currentUser.isAdmin && comments.length > 0 ? (
@@ -108,7 +134,7 @@ export default function DashComments() {
               <Table.HeadCell>Date updated</Table.HeadCell>
               <Table.HeadCell>Comment content</Table.HeadCell>
               <Table.HeadCell>Number of likes</Table.HeadCell>
-              <Table.HeadCell>PostId</Table.HeadCell>
+              <Table.HeadCell>Post Title</Table.HeadCell>
               <Table.HeadCell>User Name</Table.HeadCell>
               <Table.HeadCell>Delete</Table.HeadCell>
             </Table.Head>
@@ -120,7 +146,9 @@ export default function DashComments() {
                   </Table.Cell>
                   <Table.Cell>{comment.content}</Table.Cell>
                   <Table.Cell>{comment.numberOfLikes}</Table.Cell>
-                  <Table.Cell>{comment.postId}</Table.Cell>
+                  <Table.Cell>
+                    {commentTitle[comment.postId] || "Loading..."}
+                  </Table.Cell>
                   <Table.Cell>
                     {userNames[comment.userId] || "Loading..."}
                   </Table.Cell>
