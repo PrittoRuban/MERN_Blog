@@ -1,6 +1,7 @@
 import { Button, Select, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import HomePostCard from "../components/HomePostCard";
 
 export default function Search() {
@@ -10,13 +11,11 @@ export default function Search() {
     category: "uncategorized",
   });
 
-  //console.log(sidebarData);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
   const location = useLocation();
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -102,9 +101,14 @@ export default function Search() {
 
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="p-7 border-b md:border-r md:min-h-screen border-gray-500">
+      <div className="p-7 border-b md:border-r md:min-h-screen border-gray-500 bg-gray-100 dark:bg-gray-800">
         <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
-          <div className="flex justify-between  items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-between items-center gap-2"
+          >
             <label className="whitespace-nowrap font-semibold">
               Search Term:
             </label>
@@ -114,14 +118,21 @@ export default function Search() {
               type="text"
               value={sidebarData.searchTerm}
               onChange={handleChange}
+              className="transition duration-300 ease-in-out focus:ring-2 focus:ring-teal-500"
             />
-          </div>
-          <div className="flex justify-between items-center gap-2">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-between items-center gap-2"
+          >
             <label className="font-semibold">Category:</label>
             <Select
               onChange={handleChange}
               value={sidebarData.category}
               id="category"
+              className="transition duration-300 ease-in-out focus:ring-2 focus:ring-teal-500"
             >
               <option value="uncategorized">Select a Category</option>
               <option value="technology">Technology</option>
@@ -130,38 +141,92 @@ export default function Search() {
               <option value="freelance">Freelance</option>
               <option value="other">Other</option>
             </Select>
-          </div>
-          <div className="flex items-center gap-2">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-2"
+          >
             <label className="font-semibold">Sort:</label>
-            <Select onChange={handleChange} value={sidebarData.sort} id="sort">
+            <Select
+              onChange={handleChange}
+              value={sidebarData.sort}
+              id="sort"
+              className="transition duration-300 ease-in-out focus:ring-2 focus:ring-teal-500"
+            >
               <option value="desc">Latest</option>
               <option value="asc">Oldest</option>
             </Select>
-          </div>
-          <Button type="submit" outline gradientDuoTone="purpleToPink">
-            Apply Filters
-          </Button>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Button
+              type="submit"
+              outline
+              gradientDuoTone="purpleToPink"
+              className="w-full"
+            >
+              Apply Filters
+            </Button>
+          </motion.div>
         </form>
       </div>
-      <div className="w-full">
-        <h1 className="text-3xl font-semibold sm:border-b border-gray-500 p-3 mt-5 ">
+      <div className="w-full bg-gray-50 dark:bg-gray-900">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="text-3xl font-semibold sm:border-b border-gray-500 p-3 mt-5"
+        >
           Posts results:
-        </h1>
+        </motion.h1>
         <div className="p-7 flex flex-wrap gap-4">
           {!loading && posts.length === 0 && (
-            <p className="text-xl text-gray-500">No posts found.</p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="text-xl text-gray-500"
+            >
+              No posts found.
+            </motion.p>
           )}
-          {loading && <p className="text-xl text-gray-500">Loading...</p>}
+          {loading && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="text-xl text-gray-500"
+            >
+              Loading...
+            </motion.p>
+          )}
           {!loading &&
             posts &&
-            posts.map((post) => <HomePostCard key={post._id} post={post} />)}
+            posts.map((post) => (
+              <motion.div
+                key={post._id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <HomePostCard key={post._id} post={post} />
+              </motion.div>
+            ))}
           {showMore && (
-            <button
+            <motion.button
               onClick={handleShowMore}
               className="text-teal-500 text-lg hover:underline p-7 w-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
             >
               Show More
-            </button>
+            </motion.button>
           )}
         </div>
       </div>
