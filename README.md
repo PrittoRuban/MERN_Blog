@@ -98,15 +98,11 @@ Replace `your-mongodb-url`, `your-jwt-secret`, `your-firebase-api-key` with the 
 
 The application should now be running locally. Open your browser and navigate to the appropriate localhost URLs to see the frontend and backend in action.
 
-## Connect with Me
 
-Let's get connected!
-
-- [![LinkedIn](https://image.flaticon.com/icons/png/512/174/174857.png)](https://linkedin.com/in/your-link)
-- [![X](https://image.flaticon.com/icons/png/512/733/733579.png)](https://x.com/your-link)
 
 ---
 
 Feel free to contribute to this project by opening issues or submitting pull requests. Your feedback and contributions are highly appreciated!
 
 ---
+
