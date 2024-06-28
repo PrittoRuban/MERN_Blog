@@ -4,7 +4,6 @@
 Welcome to the MERN Blog App! This project is a full-stack blogging application built with the MERN stack (MongoDB, Express.js, React.js, Node.js), enhanced with Tailwind CSS, React Redux, and JWT for secure authentication.
 
 ## Features
-
 - **Admin Functionality:** Create, edit, and delete blog posts.
 - **User Functionality:** Read blog posts and post comments.
 - **Secure Authentication:** JWT-based secure authentication for admins and users.
